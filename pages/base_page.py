@@ -74,7 +74,18 @@ class BasePage():
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         link.click()
 
+    def set_text(self,  how, what, text):
+        try:
+            button = self.browser.find_element(how, what)
+            button.send_keys(text)
+        except NoSuchElementException:
+            return False
+        return True
 
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

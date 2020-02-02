@@ -13,7 +13,7 @@ class ProductPage(BasePage):
         self.should_be_book_name_value()
         self.should_be_book_name_info()
         self.info_message_contains_product_name()
-        self.should_disapeared_message()
+        self.should_disappeared_message()
 
 
     @pytest.mark.xfail
