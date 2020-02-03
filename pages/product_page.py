@@ -1,19 +1,9 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 import pytest
-class ProductPage(BasePage):
 
-    def check_add_product_into_basket(self):
-        self.should_not_be_success_message()
-        self.should_be_add_basket_button()
-        self.should_add_product_into_basket()
-        self.solve_quiz_and_get_code()
-        self.should_be_price_info()
-        self.should_be_book_price_value()
-        self.basket_price_equal_product_price()
-        self.should_be_book_name_value()
-        self.should_be_book_name_info()
-        self.info_message_contains_product_name()
+
+class ProductPage(BasePage):
 
     @pytest.mark.xfail
     def basket_price_equal_product_price(self):
@@ -47,6 +37,6 @@ class ProductPage(BasePage):
     @pytest.mark.xfail
     def should_disappeared_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
-            "Success message disapeared"
+            "Success message disappeared"
 
 

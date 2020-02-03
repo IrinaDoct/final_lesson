@@ -32,7 +32,16 @@ class TestUserAddToBasketFromProductPage():
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
         page = ProductPage(browser, link)
         page.open()
-        page.check_add_product_into_basket()
+        page.should_not_be_success_message()
+        page.should_be_add_basket_button()
+        page.should_add_product_into_basket()
+        page.solve_quiz_and_get_code()
+        page.should_be_price_info()
+        page.should_be_book_price_value()
+        page.basket_price_equal_product_price()
+        page.should_be_book_name_value()
+        page.should_be_book_name_info()
+        page.info_message_contains_product_name()
 
 @pytest.mark.skip
 def test_guest_cant_see_success_message(browser):
@@ -46,7 +55,16 @@ def test_guest_can_add_product_to_basket( browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
     page = ProductPage(browser, link)
     page.open()
-    page.check_add_product_into_basket()
+    page.should_not_be_success_message()
+    page.should_be_add_basket_button()
+    page.should_add_product_into_basket()
+    page.solve_quiz_and_get_code()
+    page.should_be_price_info()
+    page.should_be_book_price_value()
+    page.basket_price_equal_product_price()
+    page.should_be_book_name_value()
+    page.should_be_book_name_info()
+    page.info_message_contains_product_name()
 
 
 @pytest.mark.skip
