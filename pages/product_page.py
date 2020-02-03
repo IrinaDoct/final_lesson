@@ -2,7 +2,8 @@ from .base_page import BasePage
 from .locators import ProductPageLocators
 import pytest
 class ProductPage(BasePage):
-    def should_be_product_page(self):
+
+    def check_add_product_into_basket(self):
         self.should_not_be_success_message()
         self.should_be_add_basket_button()
         self.should_add_product_into_basket()
@@ -13,8 +14,6 @@ class ProductPage(BasePage):
         self.should_be_book_name_value()
         self.should_be_book_name_info()
         self.info_message_contains_product_name()
-        self.should_disappeared_message()
-
 
     @pytest.mark.xfail
     def basket_price_equal_product_price(self):

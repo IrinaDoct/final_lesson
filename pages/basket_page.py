@@ -9,6 +9,6 @@ class BasketPage(BasePage):
         assert  self.is_element_present(*BasketPageLocators.EMPTY_BASKET_TEXT) , "Text 'empty basket' is not presented "
 
     def basket_is_empty(self):
-        assert self.is_not_element_present(*BasketPageLocators.BASKET_SUMMERY), "Login link is not presented"
+        assert self.is_not_element_present(*BasketPageLocators.BASKET_SUMMERY), "There is product list in empty basket"
 
 
